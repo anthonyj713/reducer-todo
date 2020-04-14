@@ -1,14 +1,14 @@
 import React from 'react';
 
-const Todo = props => {
-    return (
-        <div
-            onClick={() => props.toggleTodo(props.todo.id)}
-            className={`todo${props.completed ? ' completed' : ''}`}
-            >
-                <p>{props.item}</p>
-        </div>
-    );
-};
+const Todo = ({ onClick, completed, text }) => (
+  <li
+    onClick={onClick}
+    style={{
+      textDecoration: completed ? 'line-through' : 'none'
+    }}
+  >
+    {text}
+  </li>
+)
 
 export default Todo;
